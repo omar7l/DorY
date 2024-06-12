@@ -3,6 +3,8 @@ package ch.noteshub.fhnw.data.domain;
 import jakarta.persistence.*;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Role {
 
@@ -15,6 +17,7 @@ public class Role {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
+    @JsonBackReference
     private Set<User> users;
 
     // Getters and Setters

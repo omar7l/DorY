@@ -1,6 +1,8 @@
 package ch.noteshub.fhnw.data.domain;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "favorite")
@@ -11,10 +13,12 @@ public class Favorite {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties("favorites")
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "notes_id", nullable = false)
+    @JsonIgnoreProperties("favorites")
     private Notes notes;
 
     public Long getId() {

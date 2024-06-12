@@ -2,6 +2,7 @@ package ch.noteshub.fhnw.data.domain;
 
 import jakarta.persistence.*;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "notes")
@@ -16,6 +17,7 @@ public class Notes {
     private String notesTitle;
 
     @OneToMany(mappedBy = "notes", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private Set<Favorite> favorites;
 
     // Getters and Setters
