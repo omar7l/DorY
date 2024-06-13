@@ -2,14 +2,12 @@ package ch.noteshub.fhnw.data.domain;
 
 import jakarta.persistence.*;
 import java.util.Set;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.HashSet;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "user_table")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", nullable = false, updatable = false)
@@ -39,14 +37,15 @@ public class User {
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    @JsonManagedReference
-    private Set<Role> roles;
+    @JsonIgnoreProperties("users")
+    private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-    private Set<Favorite> favorites;
+    @JsonIgnoreProperties("user")
+    private Set<Favorite> favorites = new HashSet<>();
 
-     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("user")
     private Set<Notes> notes = new HashSet<>();
 
     // Getters and Setters
@@ -121,7 +120,8 @@ public class User {
     public void setFavorites(Set<Favorite> favorites) {
         this.favorites = favorites;
     }
-        public Set<Notes> getNotes() {
+
+    public Set<Notes> getNotes() {
         return notes;
     }
 
