@@ -146,10 +146,14 @@ public class DemoApplication {
         // Initialize Notes
         Notes notes = new Notes();
         notes.setNotesTitle("Introduction to Computer Science");
+        notes.setUser(user);
         notesService.addNotes(notes);
+
 
         notes = new Notes();
         notes.setNotesTitle("Advanced Business Strategies");
+        notes.setUser(admin);
         notesService.addNotes(notes);
+
     }
 }

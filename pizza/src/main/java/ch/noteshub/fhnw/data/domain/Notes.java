@@ -2,10 +2,16 @@ package ch.noteshub.fhnw.data.domain;
 
 import jakarta.persistence.*;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "notes")
+
 public class Notes {
 
     @Id
@@ -19,6 +25,11 @@ public class Notes {
     @OneToMany(mappedBy = "notes", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private Set<Favorite> favorites;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties("notes")
+    private User user;
 
     // Getters and Setters
     public Long getNotesId() {
@@ -48,5 +59,12 @@ public class Notes {
     // Berechnetes Feld für die Anzahl der Favoriten
     public int getFavoriteCount() {
         return favorites != null ? favorites.size() : 0;
+    }
+        public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
