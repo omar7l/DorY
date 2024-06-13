@@ -3,6 +3,8 @@ package ch.noteshub.fhnw.data.domain;
 import jakarta.persistence.*;
 import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.util.HashSet;
+
 
 @Entity
 @Table(name = "user_table")
@@ -43,6 +45,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private Set<Favorite> favorites;
+
+     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Notes> notes = new HashSet<>();
 
     // Getters and Setters
     public Long getUserId() {
@@ -115,5 +120,22 @@ public class User {
 
     public void setFavorites(Set<Favorite> favorites) {
         this.favorites = favorites;
+    }
+        public Set<Notes> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(Set<Notes> notes) {
+        this.notes = notes;
+    }
+
+    public void addNote(Notes note) {
+        notes.add(note);
+        note.setUser(this);
+    }
+
+    public void removeNote(Notes note) {
+        notes.remove(note);
+        note.setUser(null);
     }
 }

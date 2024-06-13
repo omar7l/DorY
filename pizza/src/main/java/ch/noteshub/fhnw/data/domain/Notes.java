@@ -20,6 +20,10 @@ public class Notes {
     @JsonManagedReference
     private Set<Favorite> favorites;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     // Getters and Setters
     public Long getNotesId() {
         return notesId;
@@ -48,5 +52,12 @@ public class Notes {
     // Berechnetes Feld für die Anzahl der Favoriten
     public int getFavoriteCount() {
         return favorites != null ? favorites.size() : 0;
+    }
+        public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
