@@ -18,7 +18,7 @@ public class Notes {
     private String notesTitle;
 
     @Column(name = "notes_date", nullable = false)
-    private LocalDate notesDate;  // Verwende LocalDate für Datum
+    private LocalDate notesDate;
 
     @Column(name = "notes_content", nullable = false, columnDefinition = "TEXT")
     private String notesContent;
@@ -31,6 +31,11 @@ public class Notes {
     @JoinColumn(name = "user_id")
     @JsonIgnoreProperties({"notes", "favorites"})
     private User user;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "module_id", nullable = false)
+    @JsonIgnoreProperties("notes")
+    private Module module;
 
     // Getters and Setters
     public Long getNotesId() {
@@ -47,6 +52,22 @@ public class Notes {
 
     public void setNotesTitle(String notesTitle) {
         this.notesTitle = notesTitle;
+    }
+
+    public LocalDate getNotesDate() {
+        return notesDate;
+    }
+
+    public void setNotesDate(LocalDate notesDate) {
+        this.notesDate = notesDate;
+    }
+
+    public String getNotesContent() {
+        return notesContent;
+    }
+
+    public void setNotesContent(String notesContent) {
+        this.notesContent = notesContent;
     }
 
     public Set<Favorite> getFavorites() {
@@ -69,19 +90,11 @@ public class Notes {
         this.user = user;
     }
 
-    public LocalDate getNotesDate() {
-        return notesDate;
+    public Module getModule() {
+        return module;
     }
 
-    public void setNotesDate(LocalDate notesDate) {
-        this.notesDate = notesDate;
-    }
-
-    public String getNotesContent() {
-        return notesContent;
-    }
-
-    public void setNotesContent(String notesContent) {
-        this.notesContent = notesContent;
+    public void setModule(Module module) {
+        this.module = module;
     }
 }

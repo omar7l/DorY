@@ -3,6 +3,8 @@ package ch.noteshub.fhnw.data.domain;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.Set;
+import java.util.HashSet;
 
 @Entity
 @Table(name = "module")
@@ -30,6 +32,10 @@ public class Module {
     @JoinColumn(name = "degree_id", nullable = false)
     @JsonIgnoreProperties("modules")
     private Degree degree;
+
+    @OneToMany(mappedBy = "module", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("module")
+    private Set<Notes> notes = new HashSet<>();
 
     // Getters and Setters
     public Long getModuleId() {
@@ -78,5 +84,13 @@ public class Module {
 
     public void setDegree(Degree degree) {
         this.degree = degree;
+    }
+
+    public Set<Notes> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(Set<Notes> notes) {
+        this.notes = notes;
     }
 }

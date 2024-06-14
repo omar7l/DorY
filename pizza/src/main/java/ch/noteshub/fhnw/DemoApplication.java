@@ -87,13 +87,13 @@ public class DemoApplication {
         degree.setLocation(basel);
         degreeService.addDegree(degree);
 
-        Module module = new Module();
-        module.setModuleName("Computer Science");
-        module.setModuleType("Bachelor");
-        module.setModulePeriod("2023");
-        module.setModuleTeachingLanguage("English");
-        module.setDegree(degree);
-        moduleService.addModule(module);
+        Module compSci = new Module();
+        compSci.setModuleName("Computer Science");
+        compSci.setModuleType("Bachelor");
+        compSci.setModulePeriod("2023");
+        compSci.setModuleTeachingLanguage("English");
+        compSci.setDegree(degree);
+        moduleService.addModule(compSci);
 
         degree = new Degree();
         degree.setDegreeName("Master of Business Administration");
@@ -101,13 +101,13 @@ public class DemoApplication {
         degreeService.addDegree(degree);
 
 
-        module = new Module();
-        module.setModuleName("Business Administration");
-        module.setModuleType("Master");
-        module.setModulePeriod("2024");
-        module.setModuleTeachingLanguage("German");
-        module.setDegree(degree);
-        moduleService.addModule(module);
+        Module BA = new Module();
+        BA.setModuleName("Business Administration");
+        BA.setModuleType("Master");
+        BA.setModulePeriod("2024");
+        BA.setModuleTeachingLanguage("German");
+        BA.setDegree(degree);
+        moduleService.addModule(BA);
 
       
 
@@ -172,6 +172,7 @@ public class DemoApplication {
                         "\n" + //
                         "Insgesamt bietet eine Einführung in die Computerwissenschaften eine solide Grundlage für diejenigen, die ihre Karriere in verschiedenen Bereichen der Technologie, von der Softwareentwicklung bis hin zur Netzwerkadministration, fortsetzen möchten. Es ist ein erster Schritt auf einem ständig fortschreitenden Weg, der Neugier, logisches Denken und Problemlösungskompetenz fördert.");
         notes.setNotesDate(LocalDate.of(2024, 6, 12));
+        notes.setModule(compSci);
         notesService.addNotes(notes);
 
         notes = new Notes();
@@ -191,6 +192,7 @@ public class DemoApplication {
                         "\n" + //
                         "Insgesamt vermittelt ein Kurs zu „Advanced Business Strategies“ die Fähigkeiten und Kenntnisse, die erforderlich sind, um auf höchstem Niveau in der Unternehmensführung erfolgreich zu sein. Er richtet sich an erfahrene Fachkräfte, die ihre strategischen Fähigkeiten erweitern und ihre Unternehmen effektiv durch komplexe und herausfordernde Geschäftsumgebungen führen möchten.");
         notes.setNotesDate(LocalDate.of(2024, 6, 12));
+        notes.setModule(BA);
         notesService.addNotes(notes);
     }
 }
