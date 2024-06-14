@@ -68,27 +68,33 @@ public class DemoApplication {
     // Use this method to initialize placeholder data without using Postman
     @PostConstruct
     private void initPlaceholderData() throws Exception {
+
+        Degree degree = new Degree();
+        degree.setDegreeName("Bachelor of Science in Computer Science");
+        degreeService.addDegree(degree);
+
         Module module = new Module();
         module.setModuleName("Computer Science");
         module.setModuleType("Bachelor");
         module.setModulePeriod("2023");
         module.setModuleTeachingLanguage("English");
+        module.setDegree(degree);
         moduleService.addModule(module);
+
+        degree = new Degree();
+        degree.setDegreeName("Master of Business Administration");
+        degreeService.addDegree(degree);
+
 
         module = new Module();
         module.setModuleName("Business Administration");
         module.setModuleType("Master");
         module.setModulePeriod("2024");
         module.setModuleTeachingLanguage("German");
+        module.setDegree(degree);
         moduleService.addModule(module);
 
-        Degree degree = new Degree();
-        degree.setDegreeName("Bachelor of Science in Computer Science");
-        degreeService.addDegree(degree);
-
-        degree = new Degree();
-        degree.setDegreeName("Master of Business Administration");
-        degreeService.addDegree(degree);
+      
 
         // Initialize Teachers
         Teacher teacher = new Teacher();

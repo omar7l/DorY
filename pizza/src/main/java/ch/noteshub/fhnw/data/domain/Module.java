@@ -1,13 +1,8 @@
 package ch.noteshub.fhnw.data.domain;
 
 import io.swagger.v3.oas.annotations.Hidden;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "module")
@@ -30,6 +25,11 @@ public class Module {
 
     @Column(name = "module_teaching_language", nullable = false)
     private String moduleTeachingLanguage;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "degree_id", nullable = false)
+    @JsonIgnoreProperties("modules")
+    private Degree degree;
 
     // Getters and Setters
     public Long getModuleId() {
@@ -70,5 +70,13 @@ public class Module {
 
     public void setModuleTeachingLanguage(String moduleTeachingLanguage) {
         this.moduleTeachingLanguage = moduleTeachingLanguage;
+    }
+
+    public Degree getDegree() {
+        return degree;
+    }
+
+    public void setDegree(Degree degree) {
+        this.degree = degree;
     }
 }
