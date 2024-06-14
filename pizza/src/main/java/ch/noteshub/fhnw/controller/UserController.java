@@ -1,5 +1,6 @@
 package ch.noteshub.fhnw.controller;
 
+import ch.noteshub.fhnw.data.domain.Favorite;
 import ch.noteshub.fhnw.data.domain.User;
 import ch.noteshub.fhnw.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import java.util.Set;
 
 import java.util.HashMap;
 import java.util.List;
@@ -48,6 +50,18 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
+
+    @GetMapping("/{id}/favorites")
+    public ResponseEntity<Set<Favorite>> getFavByUser(@PathVariable Long id){
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            return ResponseEntity.ok(user.get().getFavorites());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
+    
+    
 
     @PostMapping
     public User createUser(@RequestBody User user) {

@@ -9,7 +9,8 @@ import ch.noteshub.fhnw.data.repository.NotesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.Set;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +38,7 @@ public class FavoriteController {
         return favorite.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+
     @PostMapping
     public ResponseEntity<Favorite> createFavorite(@RequestBody Favorite favorite) {
         Optional<User> userOptional = userRepository.findById(favorite.getUser().getUserId());
@@ -62,4 +64,6 @@ public class FavoriteController {
         favoriteRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+
 }

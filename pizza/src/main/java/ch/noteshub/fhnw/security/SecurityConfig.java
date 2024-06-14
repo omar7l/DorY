@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
-                .loginPage("/login") // Define a custom login page if needed
+                .loginPage("/login")
                 .defaultSuccessUrl("/menu", true)
                 .permitAll()
             )
