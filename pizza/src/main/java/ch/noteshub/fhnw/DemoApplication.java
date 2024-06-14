@@ -69,8 +69,21 @@ public class DemoApplication {
     @PostConstruct
     private void initPlaceholderData() throws Exception {
 
+
+                // Initialize Locations
+        Location basel = new Location();
+        basel.setLocationName("Basel");
+        locationService.addLocation(basel);
+        
+        Location muttenz = new Location();
+        muttenz.setLocationName("Muttenz");
+        locationService.addLocation(muttenz);
+        
+
+
         Degree degree = new Degree();
         degree.setDegreeName("Bachelor of Science in Computer Science");
+        degree.setLocation(basel);
         degreeService.addDegree(degree);
 
         Module module = new Module();
@@ -83,6 +96,7 @@ public class DemoApplication {
 
         degree = new Degree();
         degree.setDegreeName("Master of Business Administration");
+        degree.setLocation(muttenz);
         degreeService.addDegree(degree);
 
 
@@ -107,14 +121,6 @@ public class DemoApplication {
         teacher.setTeacherLastname("Smith");
         teacherService.addTeacher(teacher);
 
-        // Initialize Locations
-        Location location = new Location();
-        location.setLocationName("Main Campus");
-        locationService.addLocation(location);
-
-        location = new Location();
-        location.setLocationName("City Center Campus");
-        locationService.addLocation(location);
 
         // Initialize Roles
 

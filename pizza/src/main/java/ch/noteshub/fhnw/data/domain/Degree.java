@@ -17,6 +17,11 @@ public class Degree {
     @Column(name = "degree_name", nullable = false)
     private String degreeName;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "location_id")
+    @JsonIgnoreProperties("degrees")
+    private Location location;
+
     @OneToMany(mappedBy = "degree", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("degree")
     private Set<Module> modules = new HashSet<>();
@@ -36,6 +41,14 @@ public class Degree {
 
     public void setDegreeName(String degreeName) {
         this.degreeName = degreeName;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Set<Module> getModules() {
