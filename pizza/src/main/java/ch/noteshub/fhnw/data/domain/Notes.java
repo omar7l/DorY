@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "notes")
@@ -15,6 +16,12 @@ public class Notes {
 
     @Column(name = "notes_title", nullable = false)
     private String notesTitle;
+
+    @Column(name = "notes_date", nullable = false)
+    private LocalDate notesDate;  // Verwende LocalDate für Datum
+
+    @Column(name = "notes_content", nullable = false, columnDefinition = "TEXT")
+    private String notesContent;
 
     @OneToMany(mappedBy = "notes", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("notes")
@@ -60,5 +67,21 @@ public class Notes {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public LocalDate getNotesDate() {
+        return notesDate;
+    }
+
+    public void setNotesDate(LocalDate notesDate) {
+        this.notesDate = notesDate;
+    }
+
+    public String getNotesContent() {
+        return notesContent;
+    }
+
+    public void setNotesContent(String notesContent) {
+        this.notesContent = notesContent;
     }
 }
