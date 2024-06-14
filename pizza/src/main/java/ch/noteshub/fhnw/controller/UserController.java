@@ -5,9 +5,13 @@ import ch.noteshub.fhnw.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -20,6 +24,19 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<Map<String, Object>> getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        User user = userRepository.findByUserUsername(username);
+        if (user == null) {
+            return ResponseEntity.notFound().build();
+        }
+        Map<String, Object> response = new HashMap<>();
+        response.put("id", user.getUserId());
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/{id}")
