@@ -102,17 +102,15 @@ The color palette should adhere to the official FHNW colors, ensuring that the a
 
 ### Business Logic 
 
-Based on the UC-4, there will be two offers and a standard offer. Given a location, a message is shown accordingly:
+Our users are able to filter through all modules of a specific degree. The user is additionally able to search through those degrees via a text search. 
+The following search results are shown accordingly:
+- If the text matches any of the module titles: The module(s) are listed in the table.
+- If the text does not match any of the module titles: All modules of the specified degree are shown instead.
 
-- If the location is "Basel", the message is "10% off on all large pizzas!!!"
-- If the location is "Brugg", the message is "two for the price of One on all small pizzas!!!"
-- Otherwise, the message is "No special offer".
-
-**Path**: [`/api/menu/?location="Basel"`] 
-
-**Param**: `value="location"` Admitted value: "Basel","Brugg".
-
-**Method:** `GET`
+Path: [`"modules/by-degree/{degreeId}/title?={title}"`]
+Param: `value={degreeId}`, Admitted values: Any Integer
+Param: `value={title}`, Admitted values: Any string
+Method: `GET`   
 
 ## Implementation
 
@@ -157,9 +155,9 @@ This Web application was developed using Budibase and it is available for previe
 
 The codespace URL of this Repo is subject to change. Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
 
-1. Clone PizzaRP in a new repository.
+1. Clone this repository.
 2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
-3. Run the PizzaRP main available at PizzaApplication.java on your own codespace.
+3. Run the DemoApplication main available at PizzaApplication.java on your own codespace.
 4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
 5. Create an own Budibase app, you can export/import the existing Pizzeria app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
 6. Update the pizzeria URL in the datasource and publish your app.
@@ -186,11 +184,11 @@ Throughout the project, we used Jira to manage user stories, tasks, and epics, e
 
 
 ### Roles
-- Back-end developer: Omar and Emre 
-- Front-end developer: Doris 
-- Project Manager: Sarah  
+- Back-end developer: Omar Rahiel and Emre Yelögrü 
+- Front-end developer: Doris Jovic
+- Project Manager: Sarah Weber
 
 #### Maintainer
-- Omar Rahiel
+- Omar Rahiel and Emre Yelögrü
 
 
