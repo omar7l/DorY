@@ -108,8 +108,11 @@ The following search results are shown accordingly:
 - If the text does not match any of the module titles: All modules of the specified degree are shown instead.
 
 Path: [`"modules/by-degree/{degreeId}/title?={title}"`]
+
 Param: `value={degreeId}`, Admitted values: Any Integer
+
 Param: `value={title}`, Admitted values: Any string
+
 Method: `GET`   
 
 ## Implementation
