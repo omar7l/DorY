@@ -177,7 +177,7 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase web
 
 1. Clone this repository.
 2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
-3. Run the DemoApplication main available at PizzaApplication.java on your own codespace.
+3. Run the DemoApplication main available at DemoApplication.java on your own codespace.
 4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
 5. Create an own Budibase app, you can export/import the existing app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
 6. Update the URLs in the datasource and publish your app.
