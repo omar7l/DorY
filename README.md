@@ -26,62 +26,81 @@ Users can upload their notes, manage their content, and easily navigate the plat
   - [Roles](#roles)
   - [Milestones](#milestones)
 
-## Analysis
-> 🚧: You can reuse the analysis (you made) from other projects (e.g., requirement engineering), but it must be submitted according to the following template. 
-
-
-
 ### Scenario
 
 The Lecture Note Sharing Hub is a web application designed for the FHNW students to conveniently find and share lecture notes.  
 
 ### User Stories
-User: 
-1. As a User I want to have a website that is easily accessible  
-2. As a User I want to have a website that is mobile friendly. 
-3. As a User I want to I want to have a user account so I can authenticate myself. 
-5. As a User I want to delete my user account 
-6. As a User I want to have the oppurtunity to change my password or E-Mail  
-7. As a User I want to upload my notes for a specific module.  
-8. As a User I want to delete my notes for a specific module if I don’t want to share then anymore.  
-9. As a User I want to download notes that are necessary for my specific module. 
-11. As a User I want to favourise notes so I can (and see how many favs)
-13. As a User, I want to search for notes by keywords, so I can find relevant information quickly. 
-14. As a User, I want to filter notes by module or date,, so I can easily find the most relevant notes.
+User:
+1.	As a User, I want to have a website that is easily accessible.
+2.	As a User, I want to have a website that is mobile-friendly.
+3.	As a User, I want to create an account.
+4.	As a User, I want to delete my user account.
+5.	As a User, I want to have the opportunity to change my password or username.
+6.	As a User, I want to upload my notes for a specific module.
+7.	As a User, I want to edit my notes' title and content.
+8.	As a User, I want to delete my notes for a specific module if I don’t want to share them anymore.
+9.	As a User, I want to favorite notes so I can see how many favorites they have.
+10.	As a User, I want an overview of my favorite notes.
+11.	As a User, I want to search for notes by title.
+12.	As a User, I want to filter notes by location, degree, and module.
+13.	As a User, I want to filter notes by module period and module.
+Admin:
+14.	As an Admin, I want to delete user accounts.
+15.	As an Admin, I want to change usernames for users.
+16.	As an Admin, I want to delete notes.
+17.	As an Admin, I want to add a module.
 
-Admin: 
-
-15. As an Admin, I want to delete an account. 
-16. As an Admin, I want to delete notes. 
-17. As an Admin, I want to add and delete a module.
 
 ### Use Case
 
-![](images/use-case.png)
+![image](https://github.com/omar7l/DorY/assets/115163722/b6e2b86d-aaff-4cda-8261-c6425b862ae7)
 
+User:
+[Login] User can log into the web application
+[View Own Profile] User can view their own profile.
+[Change or Delete Own Username or Password] User can change or delete their username or password.
+[Upload Notes] User can upload notes.
+[View Notes] User can view notes.
+[Search, Filter, and Sort Notes] User can search, filter, and sort notes.
+[Delete Notes] User can delete their notes.
 
-- UC-1 [Show all the Pizza]: Admin can retrieve all the pizza on the menu
-- UC-2 [Show a Pizza]: Admin can retrieve the information on a specific pizza.
-- UC-3 [Edit a Pizza]: Admin can create, update, and delete pizzas from the menu.
-- UC-4 [Show Current Location Offer]: User can retrieve special menu by location
+Admin:
+[Login] Admin can log into the web application.
+[View Own Profile] Admin can view their own profile.
+[Change or Delete Own Username or Password] Admin can change or delete their username or password.
+[View User Profiles] Admin can view user profiles.
+[Change Usernames from Users] Admin can change usernames for users.
+[Delete User Accounts] Admin can delete user accounts. 
+[Delete Notes] Admin can delete uploaded notes.
+
 
 ## Design
-> 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
+The color palette should adhere to the official FHNW colors, ensuring that the application maintains a consistent look and feel with FHNW's websites. Graphics should be a mix of those sourced from FHNW websites and custom-made elements to ensure a cohesive and branded user experience. Typography choices should align with those used by FHNW to maintain consistency across all platforms. The layout should be clean, organized, and easily navigable, mirroring the design principles of FHNW's website. UX design should prioritize ease of use and intuitive navigation, adhering to FHNW's corporate identity guidelines.
 
 ### Wireframe
-> 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools. 
 
-Starting from the home page, we can visit different pages. Available public pages are visible in the menu...
+![image](https://github.com/omar7l/DorY/assets/115163722/844c8d66-ad49-480d-98b0-1f412348a469)
+![image](https://github.com/omar7l/DorY/assets/115163722/27f8d73e-dae4-4922-b41c-2dea42990526)
+![image](https://github.com/omar7l/DorY/assets/115163722/3736cc56-75df-4021-9237-71cba630e614)
+![image](https://github.com/omar7l/DorY/assets/115163722/1e0eb2a5-89a5-45f4-982c-45051ea3bbb8)
+![image](https://github.com/omar7l/DorY/assets/115163722/33959e46-1031-41de-8f0a-7b110329163b)
+![image](https://github.com/omar7l/DorY/assets/115163722/6c079228-c913-492f-b6f1-2869e4c28dea)
+![image](https://github.com/omar7l/DorY/assets/115163722/4e1720d5-d054-418f-97d9-3e3097e1dfee)
+![image](https://github.com/omar7l/DorY/assets/115163722/9b19a345-b96c-4d3e-b817-4f00df7a88b6)
+![image](https://github.com/omar7l/DorY/assets/115163722/e881d32f-411b-4537-8b06-7b334c9025de)
+![image](https://github.com/omar7l/DorY/assets/115163722/196670ae-a91c-4c4c-86d7-d16bff4b53db)
+![image](https://github.com/omar7l/DorY/assets/115163722/54133036-ce09-4557-b5ce-1715e4b9826b)
+![image](https://github.com/omar7l/DorY/assets/115163722/912c12de-f912-46c8-ae9a-76dcb11fef65)
 
-### Prototype
-> 🚧: A prototype can be designed using placeholder text/figures in Budibase. You don't need to connect the front-end to back-end in the early stages of the project development.
+
+
 
 ### Domain Design
-> 🚧: Provide a picture and describe your domain model; you may use Entity-Relationship Model or UML class diagram. Both can be created in Visual Paradigm - we have an academic license for it.
+![image](https://github.com/omar7l/DorY/assets/115163722/eea42af9-28f0-4566-aef7-c142eacc82cd)
 
-The `ch.fhnw.pizza.data.domain` package contains the following domain objects / entities including getters and setters:
 
-![](images/relational_model.png)
+
 
 ### Business Logic 
 > 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
@@ -134,9 +153,8 @@ Then, the following further dependencies have been added to the project `pom.xml
 ```
 
 ### Frontend Technology
-> 🚧: Describe your views and what APIs is used on which view. If you don't have access to the Internet Technology class Budibase environment(https://inttech.budibase.app/), please write to Devid on MS teams.
 
-This Web application was developed using Budibase and it is available for preview at https://inttech.budibase.app/app/pizzeria. 
+This Web application was developed using Budibase and it is available for preview at
 
 ## Execution
 > 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
@@ -153,25 +171,32 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 6. Update the pizzeria URL in the datasource and publish your app.
 
 ## Project Management
-> 🚧: Include all the participants and briefly describe each of their **individual** contribution and/or roles. Screenshots/descriptions of your Kanban board or similar project management tools are welcome.
+For our Lecture Note Sharing Hub project, we used a combination of Scrum and Kanban methodologies to ensure efficient and organised project management. This hybrid approach combined the structure of Scrum with the flexibility of Kanban, allowing us to adapt to changes quickly while remaining focused on deliverables.
+
+We organised our work into three sprints, each meticulously planned and tracked with Jira. During each sprint, we prioritised tasks based on their importance and dependencies to ensure that critical functionalities were developed and tested on time. The sprints facilitated iterative progress by allowing us to incorporate feedback and continuously improve.
+
+Sprint 1 concentrated on foundational elements such as user authentication, basic note management features, and initial database and backend infrastructure configuration.
+Sprint 2 focused on improving the user interface, implementing advanced search and filtering features, and ensuring mobile responsiveness.
+Sprint 3: Focused on improving the user experience, adding admin features, and conducting extensive testing and bug fixes to ensure a smooth and reliable application.
+Throughout the project, we used Jira to manage user stories, tasks, and epics, ensuring clear and effective communication among team members.
+
+![image](https://github.com/omar7l/DorY/assets/115163722/a495a2a4-608f-4333-9965-7ad07650abba)
+
+![image](https://github.com/omar7l/DorY/assets/115163722/e9d25e15-bc47-4a17-b9b5-e364bc852d01)
+
+![image](https://github.com/omar7l/DorY/assets/115163722/4e26814a-ebe8-41a8-aa3f-4547b31ffead)
+
+![image](https://github.com/omar7l/DorY/assets/115163722/7959e833-df97-4b00-a4ec-8232978fedbb)
+
+![image](https://github.com/omar7l/DorY/assets/115163722/52883b6e-2409-4fff-b84b-f3df4940b48a)
+
 
 ### Roles
-- Back-end developer: Charuta Pande 
-- Front-end developer: Devid Montecchiari
-
-### Milestones
-1. **Analysis**: Scenario ideation, use case analysis and user story writing.
-2. **Prototype Design**: Creation of wireframe and prototype.
-3. **Domain Design**: Definition of domain model.
-4. **Business Logic and API Design**: Definition of business logic and API.
-5. **Data and API Implementation**: Implementation of data access and business logic layers, and API.
-6. **Security and Frontend Implementation**: Integration of security framework and frontend realisation.
-7. (optional) **Deployment**: Deployment of Web application on cloud infrastructure.
-
+- Back-end developer: Omar and Emre 
+- Front-end developer: Doris 
+- Project Manager: Sarah  
 
 #### Maintainer
-- Charuta Pande
-- Devid Montecchiari
+- Omar Rahiel
 
-#### License
-- [Apache License, Version 2.0](blob/master/LICENSE)
+
