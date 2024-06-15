@@ -14,7 +14,10 @@ import ch.noteshub.fhnw.data.repository.UserRepository;
 import ch.noteshub.fhnw.data.repository.ModuleRepository;
 import ch.noteshub.fhnw.data.domain.CreateNoteRequest;
 import ch.noteshub.fhnw.data.domain.Favorite;
-
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -95,5 +98,26 @@ public class NotesController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
+
+    @PatchMapping("/{noteId}/updateTitle")
+    public ResponseEntity<Notes> updateNoteTitle(@PathVariable Long noteId, @RequestParam String title) {
+    try {
+        Notes updatedNote = notesService.updateNoteTitle(noteId, title);
+        return ResponseEntity.ok(updatedNote);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+}
+@PatchMapping("/{noteId}/updateContent")
+public ResponseEntity<Notes> updateNoteContent(@PathVariable Long noteId, @RequestParam String content) {
+    try {
+        Notes updatedNote = notesService.updateNoteContent(noteId, content);
+        return ResponseEntity.ok(updatedNote);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+}
 }
    

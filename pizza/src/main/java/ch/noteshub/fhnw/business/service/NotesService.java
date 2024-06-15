@@ -116,4 +116,28 @@ public class NotesService {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
         return notesRepository.findByUser(user);
     }
+
+    // In NotesService.java
+
+    public Notes updateNoteTitle(Long noteId, String title) throws Exception {
+    Optional<Notes> noteOptional = notesRepository.findById(noteId);
+    if (noteOptional.isPresent()) {
+        Notes note = noteOptional.get();
+        note.setNotesTitle(title);
+        return notesRepository.save(note);
+    } else {
+        throw new Exception("Note not found");
+    }
+}
+
+    public Notes updateNoteContent(Long noteId, String content) throws Exception {
+    Optional<Notes> noteOptional = notesRepository.findById(noteId);
+    if (noteOptional.isPresent()) {
+        Notes note = noteOptional.get();
+        note.setNotesContent(content); // Assuming there's a setNotesContent method in your Notes entity
+        return notesRepository.save(note);
+    } else {
+        throw new Exception("Note not found");
+    }
+}
 }
