@@ -99,10 +99,10 @@ Based on the UC-4, there will be two offers and a standard offer. Given a locati
 **Method:** `GET`
 
 ## Implementation
-> 🚧: Briefly describe your technology stack, which apps were used and for what.
+
+We used Spring boot for the backend and budibase to build the frontend. The connections were established using a REST API. 
 
 ### Backend Technology
-> 🚧: It is suggested to clone this repository, but you are free to start from fresh with a Spring Initializr. If so, describe if there are any changes to the PizzaRP e.g., different dependencies, versions & etc... Please, also describe how your database is set up. If you want a persistent or in-memory H2 database check [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/resources/application.properties). If you have placeholder data to initialize at the app, you may use a variation of the method **initPlaceholderData()** available at [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/java/ch/fhnw/pizza/PizzaApplication.java).
 
 This Web application is relying on [Spring Boot](https://projects.spring.io/spring-boot) and the following dependencies:
 
