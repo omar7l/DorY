@@ -84,6 +84,24 @@ public class UserController {
         }
     }
 
+    @PatchMapping("/{id}/username")
+public ResponseEntity<User> updateUsername(@PathVariable Long id, @RequestBody Map<String, String> update) {
+    Optional<User> user = userRepository.findById(id);
+    if (!user.isPresent()) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    User userToUpdate = user.get();
+    String newUsername = update.get("username");
+    if (newUsername != null && !newUsername.isEmpty()) {
+        userToUpdate.setUserUsername(newUsername);
+        userRepository.save(userToUpdate);
+        return ResponseEntity.ok(userToUpdate);
+    } else {
+        return ResponseEntity.badRequest().body(userToUpdate);
+    }
+}
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         Optional<User> user = userRepository.findById(id);
