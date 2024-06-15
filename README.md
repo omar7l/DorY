@@ -55,6 +55,7 @@ User:
 ![Untitled](https://github.com/omar7l/DorY/assets/33747371/551a7215-bb59-40ee-964d-88eb442af4c8)
 
 User:
+
 [Login] User can log into the web application
 
 [View Own Profile] User can view their own profile.
@@ -71,6 +72,7 @@ User:
 
 
 Admin:
+
 [Login] Admin can log into the web application.
 
 [View Own Profile] Admin can view their own profile.
