@@ -1,4 +1,4 @@
-# Lecture Note Sharing Hub Project
+![Untitled](https://github.com/omar7l/DorY/assets/33747371/33f5924d-6e3e-40ce-878e-0ea127de92b6)# Lecture Note Sharing Hub Project
 
 The Lecture Note Sharing Hub is a web application designed for the FHNW students to conveniently find and share lecture notes.  
  
@@ -8,7 +8,6 @@ Users can upload their notes, manage their content, and easily navigate the plat
 
 [![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-> 🚧: **This is a template project**: Make sure you adapt this documentation and the source code in this project according to your needs and use case. Comments are provided with "🚧:". Do not leave these comments in your final submission!
 
 #### Contents:
 - [Analysis](#analysis)
@@ -54,7 +53,7 @@ Admin:
 
 ### Use Case
 
-![image](https://github.com/omar7l/DorY/assets/115163722/b6e2b86d-aaff-4cda-8261-c6425b862ae7)
+![Untitled](https://github.com/omar7l/DorY/assets/33747371/d747258f-a08e-4b7a-8abc-ba8c72e7b737)
 
 User:
 [Login] User can log into the web application
@@ -81,7 +80,6 @@ The color palette should adhere to the official FHNW colors, ensuring that the a
 ### Wireframe
 
 ![image](https://github.com/omar7l/DorY/assets/115163722/844c8d66-ad49-480d-98b0-1f412348a469)
-![image](https://github.com/omar7l/DorY/assets/115163722/27f8d73e-dae4-4922-b41c-2dea42990526)
 ![image](https://github.com/omar7l/DorY/assets/115163722/3736cc56-75df-4021-9237-71cba630e614)
 ![image](https://github.com/omar7l/DorY/assets/115163722/1e0eb2a5-89a5-45f4-982c-45051ea3bbb8)
 ![image](https://github.com/omar7l/DorY/assets/115163722/33959e46-1031-41de-8f0a-7b110329163b)
@@ -97,13 +95,11 @@ The color palette should adhere to the official FHNW colors, ensuring that the a
 
 
 ### Domain Design
-![image](https://github.com/omar7l/DorY/assets/115163722/eea42af9-28f0-4566-aef7-c142eacc82cd)
-
-
+![Untitled](https://github.com/omar7l/DorY/assets/33747371/a70c8669-d1c6-489b-bc63-8ad9b1c54687)
+![Untitled](https://github.com/omar7l/DorY/assets/33747371/f7a9464a-0cc7-460e-839e-e5384bbfcd5d)
 
 
 ### Business Logic 
-> 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
 
 Based on the UC-4, there will be two offers and a standard offer. Given a location, a message is shown accordingly:
 
@@ -157,11 +153,8 @@ Then, the following further dependencies have been added to the project `pom.xml
 This Web application was developed using Budibase and it is available for preview at
 
 ## Execution
-> 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
 
 The codespace URL of this Repo is subject to change. Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
-
-> 🚧: This is a shortened description for example purposes. A complete tutorial will be provided in a dedicated lecture.
 
 1. Clone PizzaRP in a new repository.
 2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
