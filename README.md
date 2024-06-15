@@ -72,7 +72,7 @@ User:
 
 
 
-
+<br>
 Admin:
 
 [Login] Admin can log into the web application.
