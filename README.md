@@ -156,14 +156,14 @@ This Web application was developed using Budibase and it is available for previe
 
 ## Execution
 
-The codespace URL of this Repo is subject to change. Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
+The codespace URL of this Repo is subject to change. Therefore, the Budibase webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
 
 1. Clone this repository.
 2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
 3. Run the DemoApplication main available at PizzaApplication.java on your own codespace.
 4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
-5. Create an own Budibase app, you can export/import the existing Pizzeria app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
-6. Update the pizzeria URL in the datasource and publish your app.
+5. Create an own Budibase app, you can export/import the existing app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
+6. Update the URLs in the datasource and publish your app.
 
 ## Project Management
 For our Lecture Note Sharing Hub project, we used a combination of Scrum and Kanban methodologies to ensure efficient and organised project management. This hybrid approach combined the structure of Scrum with the flexibility of Kanban, allowing us to adapt to changes quickly while remaining focused on deliverables.
