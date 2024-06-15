@@ -4,11 +4,16 @@ import jakarta.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import ch.noteshub.fhnw.business.service.ModuleService;
+import ch.noteshub.fhnw.business.service.UserService;
+
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "notes")
 public class Notes {
+  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "notes_id", nullable = false, updatable = false)
@@ -37,6 +42,26 @@ public class Notes {
     @JsonIgnoreProperties("notes")
     private Module module;
 
+/* 
+    public Notes (String title, String content, User user, LocalDate date, Module module)
+    {
+        this.notesTitle = title;
+        this.notesContent = content;
+        this.user = user;
+        this.notesDate = date;
+        this.module = module;
+    }
+    public Notes (String title, String content, Long userId, LocalDate date, Long moduleId)
+    {
+        UserService userService = new UserService();
+        ModuleService moduleService = new ModuleService();
+        this.notesTitle = title;
+        this.notesContent = content;
+        this.user = userService.findUserById(userId);
+        this.notesDate = date;
+        this.module = moduleService.findModuleById(moduleId);
+    }
+*/
     // Getters and Setters
     public Long getNotesId() {
         return notesId;

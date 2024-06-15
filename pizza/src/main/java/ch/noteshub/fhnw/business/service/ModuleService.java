@@ -1,5 +1,6 @@
 package ch.noteshub.fhnw.business.service;
 
+import ch.noteshub.fhnw.data.domain.Degree;
 import ch.noteshub.fhnw.data.domain.Module;
 import ch.noteshub.fhnw.data.repository.ModuleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,4 +44,8 @@ public class ModuleService {
     public void deleteModule(Long id) {
         moduleRepository.deleteById(id);
     }
+    public List<Module> getModulesByDegreeId(Long degreeId) {
+        return moduleRepository.findByDegreeId(degreeId);
+    }
+    
 }

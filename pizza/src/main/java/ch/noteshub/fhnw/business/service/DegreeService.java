@@ -4,6 +4,7 @@ import ch.noteshub.fhnw.data.domain.Degree;
 import ch.noteshub.fhnw.data.repository.DegreeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ch.noteshub.fhnw.data.domain.Location;
 
 import java.util.List;
 import java.util.Optional;
@@ -39,5 +40,8 @@ public class DegreeService {
 
     public void deleteDegree(Long id) {
         degreeRepository.deleteById(id);
+    }
+    public List<Degree> getDegreesByLocation(Location location) {
+        return degreeRepository.findByLocation(location);
     }
 }

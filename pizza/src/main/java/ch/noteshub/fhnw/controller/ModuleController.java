@@ -1,6 +1,9 @@
 package ch.noteshub.fhnw.controller;
 
+import ch.noteshub.fhnw.business.service.DegreeService;
+import ch.noteshub.fhnw.data.domain.Degree;
 import ch.noteshub.fhnw.data.domain.Module;
+import ch.noteshub.fhnw.data.repository.DegreeRepository;
 import ch.noteshub.fhnw.data.repository.ModuleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +19,7 @@ public class ModuleController {
 
     @Autowired
     private ModuleRepository moduleRepository;
+    private DegreeService degreeService;
 
     @GetMapping
     public List<Module> getAllModules() {
@@ -60,6 +64,15 @@ public class ModuleController {
             return ResponseEntity.ok().build();
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+    @GetMapping("/by-degree/{degreeId}")
+    public ResponseEntity<List<Module>> getModulesByDegreeId(@PathVariable Long degreeId) {
+        try {
+            List<Module> modules = moduleRepository.findByDegreeId(degreeId);
+            return ResponseEntity.ok(modules);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
 }

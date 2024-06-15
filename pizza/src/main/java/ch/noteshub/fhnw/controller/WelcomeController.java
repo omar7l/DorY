@@ -31,7 +31,8 @@ public class WelcomeController {
         if (!authorities.isEmpty()) {
             String username = userDetails.getUsername();
             String ID = userDetails.getUserId().toString();
-            return username + ";" + ID;
+            String role = userDetails.getAuthorities().toArray()[0].toString().replace("ROLE_", "").trim();
+            return role + ";" + username + ";" + ID + ";";
         } else {
             return "No roles found";
         }

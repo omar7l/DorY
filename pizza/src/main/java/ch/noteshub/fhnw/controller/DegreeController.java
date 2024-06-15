@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ch.noteshub.fhnw.business.service.DegreeService;
+import ch.noteshub.fhnw.data.domain.Location;
 
 import java.util.List;
 import java.util.Optional;
@@ -58,5 +60,12 @@ public class DegreeController {
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
+    }
+
+    @GetMapping("/by-location/{locationId}")
+    public List<Degree> getDegreesByLocation(@PathVariable Long locationId) {
+        Location location = new Location();
+        location.setLocationId(locationId);
+        return degreeRepository.findByLocation(location);
     }
 }

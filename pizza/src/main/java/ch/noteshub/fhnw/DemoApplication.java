@@ -155,7 +155,17 @@ public class DemoApplication {
         admin.setEnabled(true);
         admin.setRoles(new HashSet<>(Arrays.asList(userRole, adminRole)));
         userRepository.save(admin);
-
+        String content = ("Computerwissenschaften sind ein faszinierendes Feld, das die theoretischen Grundlagen der Informations- und Computertechnologie erforscht. Es handelt sich um die wissenschaftliche und praktische Herangehensweise an Berechnung und deren Anwendung. In einem Kurs oder einer Einführungsreihe zum Thema “Einführung in die Computerwissenschaften” lernt man die grundlegenden Konzepte des Programmierens, die Funktionsweise von Computersystemen und die theoretischen Modelle, die das Rückgrat der digitalen Technologie bilden.\n" + //
+        "\n" + //
+        "Der Kurs beginnt typischerweise mit den Grundlagen der Programmierung. Hier werden einfache Programmiersprachen wie Python oder Java eingeführt, um die Basis für komplexere Konzepte zu schaffen. Die Studierenden erlernen, wie man einfache Programme schreibt, die Daten verarbeiten, Entscheidungen treffen und die Ergebnisse ausgeben.\n" + //
+        "\n" + //
+        "Neben der Programmierung wird auch die Struktur von Computersystemen behandelt. Dazu gehören Themen wie Betriebssysteme, Netzwerke und die Architektur von Computern. Die Studierenden verstehen, wie Software mit Hardware interagiert und welche Rolle das Betriebssystem bei der Verwaltung der Ressourcen spielt.\n" + //
+        "\n" + //
+        "Ein weiterer wichtiger Bereich ist die Datenstruktur und Algorithmen. Diese Themen sind entscheidend für die Entwicklung effizienter Programme, die große Datenmengen verarbeiten können. Studierende lernen verschiedene Arten von Datenstrukturen kennen, wie Listen, Stapel, Warteschlangen und Bäume. Sie studieren auch Algorithmen zur Suche und Sortierung, um zu verstehen, wie diese auf Datenstrukturen angewendet werden können.\n" + //
+        "\n" + //
+        "Schließlich behandelt ein Einführungskurs auch die Aspekte der Softwareentwicklung und des Software Engineering. Dies umfasst Methoden der Softwareentwicklung, Testverfahren und die Wartung von Softwareprojekten. Ziel ist es, den Studierenden beizubringen, wie man qualitativ hochwertige Software plant, entwickelt und pflegt.\n" + //
+        "\n" + //
+        "Insgesamt bietet eine Einführung in die Computerwissenschaften eine solide Grundlage für diejenigen, die ihre Karriere in verschiedenen Bereichen der Technologie, von der Softwareentwicklung bis hin zur Netzwerkadministration, fortsetzen möchten. Es ist ein erster Schritt auf einem ständig fortschreitenden Weg, der Neugier, logisches Denken und Problemlösungskompetenz fördert.");
         // Initialize Notes
         Notes notes = new Notes();
         notes.setNotesTitle("Introduction to Computer Science");
