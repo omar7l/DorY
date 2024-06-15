@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
@@ -19,6 +20,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
+    private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public UserController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder; }
 
     @Autowired
     private UserRepository userRepository;
@@ -102,6 +110,7 @@ public ResponseEntity<User> updateUsername(@PathVariable Long id, @RequestBody M
     }
 }
 
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         Optional<User> user = userRepository.findById(id);
@@ -111,5 +120,34 @@ public ResponseEntity<User> updateUsername(@PathVariable Long id, @RequestBody M
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
+    }
+
+    @PatchMapping("/{id}/password")
+    public ResponseEntity<?> updatePassword(@PathVariable Long id, @RequestBody Map<String, String> passwords) {
+        Optional<User> userOptional = userRepository.findById(id);
+        if (!userOptional.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+    
+        User user = userOptional.get();
+        String oldPassword = passwords.get("oldPassword");
+        String newPassword = passwords.get("newPassword");
+    
+        // Check if old password is not empty and matches the current password
+        if (oldPassword == null || newPassword == null || oldPassword.trim().isEmpty() || newPassword.trim().isEmpty()) {
+            return ResponseEntity.badRequest().body("Both old and new passwords are required");
+        }
+    
+        // Verify old password
+        if (!passwordEncoder.matches(oldPassword, user.getUserPassword())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Old password does not match");
+        }
+    
+        // Encrypt and set the new password
+        String encryptedPassword = passwordEncoder.encode(newPassword);
+        user.setUserPassword(encryptedPassword);
+        userRepository.save(user);
+    
+        return ResponseEntity.ok().build();
     }
 }
