@@ -75,4 +75,17 @@ public class ModuleController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
+    @GetMapping("/by-degree/{degreeId}/title")
+    public ResponseEntity<List<Module>> getModulesByDegreeIdAndTitle(@PathVariable Long degreeId, @RequestParam String title) {
+        try {
+            List<Module> modules = moduleRepository.findByDegreeIdAndTitleContaining(degreeId, title);
+            if (modules.isEmpty()) {
+                modules = moduleRepository.findByDegreeId(degreeId);
+            }
+            return ResponseEntity.ok(modules);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+    }
+    
 }

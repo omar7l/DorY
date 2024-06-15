@@ -12,4 +12,6 @@ import java.util.List;
 public interface ModuleRepository extends JpaRepository<Module, Long> {
     @Query("SELECT m FROM Module m WHERE m.degree.degreeId = :degreeId")
     List<Module> findByDegreeId(@Param("degreeId") Long degreeId);
+    @Query("SELECT m FROM Module m WHERE m.degree.degreeId = :degreeId AND m.moduleName LIKE %:title%")
+    List<Module> findByDegreeIdAndTitleContaining(@Param("degreeId") Long degreeId, @Param("title") String title);
 }

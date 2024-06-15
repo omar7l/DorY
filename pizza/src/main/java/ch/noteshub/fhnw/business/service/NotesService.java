@@ -140,4 +140,9 @@ public class NotesService {
         throw new Exception("Note not found");
     }
 }
+
+    public List<Notes> findNotesByModule(Long moduleId) {
+        Module module = moduleRepository.findById(moduleId).orElseThrow(() -> new RuntimeException("Module not found"));
+        return notesRepository.findByModule(module);
+    }
 }

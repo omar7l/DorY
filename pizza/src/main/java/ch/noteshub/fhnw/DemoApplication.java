@@ -579,6 +579,14 @@ notes11.setNotesDate(LocalDate.of(2024, 3, 15));
 notes11.setModule(BIT3);
 notesService.addNotes(notes11);
 
+Notes notes11_2 = new Notes();
+notes11_2.setNotesTitle("IT Project Management2");
+notes11_2.setUser(user1);
+notes11_2.setNotesContent("DDieser Kurs bietet eine Einführung in das Management von IT-Projekten. Die Studierenden lernen, wie man IT-Projekte plant, durchführt und erfolgreich abschließt.");
+notes11_2.setNotesDate(LocalDate.of(2024, 3, 14));
+notes11_2.setModule(BIT3);
+notesService.addNotes(notes11_2); 
+
 Notes notes12 = new Notes();
 notes12.setNotesTitle("Business Process Modeling");
 notes12.setUser(user2);
