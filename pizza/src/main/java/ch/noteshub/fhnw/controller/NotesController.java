@@ -80,7 +80,6 @@ public class NotesController {
     @DeleteMapping("/{noteId}")
     public ResponseEntity<Void> deleteNote(@PathVariable String noteId) {
         try {
-            noteId = noteId.split(":")[1].replace('}',' ').trim();
             notesService.deleteNoteById((Long.parseLong(noteId)));
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         } catch (RuntimeException e) {
