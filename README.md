@@ -1,4 +1,4 @@
-![Untitled](https://github.com/omar7l/DorY/assets/33747371/33f5924d-6e3e-40ce-878e-0ea127de92b6)# Lecture Note Sharing Hub Project
+# Lecture Note Sharing Hub Project
 
 The Lecture Note Sharing Hub is a web application designed for the FHNW students to conveniently find and share lecture notes.  
  
@@ -53,7 +53,7 @@ Admin:
 
 ### Use Case
 
-![Untitled](https://github.com/omar7l/DorY/assets/33747371/d747258f-a08e-4b7a-8abc-ba8c72e7b737)
+![Untitled](https://github.com/omar7l/DorY/assets/33747371/551a7215-bb59-40ee-964d-88eb442af4c8)
 
 User:
 [Login] User can log into the web application
@@ -95,8 +95,9 @@ The color palette should adhere to the official FHNW colors, ensuring that the a
 
 
 ### Domain Design
-![Untitled](https://github.com/omar7l/DorY/assets/33747371/a70c8669-d1c6-489b-bc63-8ad9b1c54687)
-![Untitled](https://github.com/omar7l/DorY/assets/33747371/f7a9464a-0cc7-460e-839e-e5384bbfcd5d)
+![Untitled](https://github.com/omar7l/DorY/assets/33747371/4e4f4c61-3c5e-447c-b3ff-50412e29e7d6)
+![Untitled](https://github.com/omar7l/DorY/assets/33747371/7b6701a9-fbac-40b3-8cc8-2dad6a34b2ae)
+
 
 
 ### Business Logic 
