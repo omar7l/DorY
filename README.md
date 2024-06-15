@@ -149,7 +149,7 @@ Then, the following further dependencies have been added to the project `pom.xml
 
 ### Frontend Technology
 
-This Web application was developed using Budibase and it is available for preview at
+This Web application was developed using Budibase and it is available for preview at [link](https://fhnwnotessharing.budibase.app/app/basel_4__fhnw-notes-sharinghub/)
 
 ## Execution
 
