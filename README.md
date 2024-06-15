@@ -2,7 +2,7 @@
 
 The Lecture Note Sharing Hub is a web application designed for the FHNW students to conveniently find and share lecture notes.  
  
-It features a comprehensive filtering system that allows students to sort notes by various criteria including module, location, and lecturer.  
+It features a comprehensive filtering system that allows students to sort notes by various criteria including location, degree, and module.  
  
 Users can upload their notes, manage their content, and easily navigate the platform to access the information they need, tailored to their educational requirements. The app supports secure user authentication for students and admins, ensuring a safe exchange of information.
 
@@ -57,25 +57,39 @@ Admin:
 
 User:
 [Login] User can log into the web application
+
 [View Own Profile] User can view their own profile.
+
 [Change or Delete Own Username or Password] User can change or delete their username or password.
+
 [Upload Notes] User can upload notes.
+
 [View Notes] User can view notes.
+
 [Search, Filter, and Sort Notes] User can search, filter, and sort notes.
+
 [Delete Notes] User can delete their notes.
+
 
 Admin:
 [Login] Admin can log into the web application.
+
 [View Own Profile] Admin can view their own profile.
+
 [Change or Delete Own Username or Password] Admin can change or delete their username or password.
+
 [View User Profiles] Admin can view user profiles.
+
 [Change Usernames from Users] Admin can change usernames for users.
+
 [Delete User Accounts] Admin can delete user accounts. 
+
 [Delete Notes] Admin can delete uploaded notes.
 
 
 ## Design
-The color palette should adhere to the official FHNW colors, ensuring that the application maintains a consistent look and feel with FHNW's websites. Graphics should be a mix of those sourced from FHNW websites and custom-made elements to ensure a cohesive and branded user experience. Typography choices should align with those used by FHNW to maintain consistency across all platforms. The layout should be clean, organized, and easily navigable, mirroring the design principles of FHNW's website. UX design should prioritize ease of use and intuitive navigation, adhering to FHNW's corporate identity guidelines.
+The design of the application is based on the official FHNW colors and design principles to ensure consistency with the FHNW websites. The use of a mix of FHNW graphics and custom elements establishes a consistent look and feel. A clean, clear and easily navigable layout provides the user with an intuitive guidance in line with the FHNW's corporate identity guidelines.
+
 
 ### Wireframe
 
@@ -168,7 +182,7 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase web
 ## Project Management
 For our Lecture Note Sharing Hub project, we used a combination of Scrum and Kanban methodologies to ensure efficient and organised project management. This hybrid approach combined the structure of Scrum with the flexibility of Kanban, allowing us to adapt to changes quickly while remaining focused on deliverables.
 
-We organised our work into three sprints, each meticulously planned and tracked with Jira. During each sprint, we prioritised tasks based on their importance and dependencies to ensure that critical functionalities were developed and tested on time. The sprints facilitated iterative progress by allowing us to incorporate feedback and continuously improve.
+We organised our work into three sprints, which we planned and tracked with Jira. During each sprint, we prioritised tasks based on their importance and dependencies to ensure that critical functionalities were developed and tested on time. The sprints facilitated iterative progress and allowed us to incorporate feedback and improve continuously.
 
 Sprint 1 concentrated on foundational elements such as user authentication, basic note management features, and initial database and backend infrastructure configuration.
 Sprint 2 focused on improving the user interface, implementing advanced search and filtering features, and ensuring mobile responsiveness.
