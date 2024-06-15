@@ -44,8 +44,6 @@ User:
 11.	As a User, I want to search for notes by title.
 12.	As a User, I want to filter notes by location, degree, and module.
 13.	As a User, I want to filter notes by module period and module.
-
-Admin:
 14.	As an Admin, I want to delete user accounts.
 15.	As an Admin, I want to change usernames for users.
 16.	As an Admin, I want to delete notes.
